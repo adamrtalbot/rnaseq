@@ -25,6 +25,8 @@ process UNTAR {
     """
     mkdir output
 
+    echo "hello world"
+
     ## Ensures --strip-components only applied when top level of tar contents is a directory
     ## If just files or multiple directories, place all in output
     if [[ \$(tar -tzf ${archive} | grep -o -P "^.*?\\/" | uniq | wc -l) -eq 1 ]]; then
